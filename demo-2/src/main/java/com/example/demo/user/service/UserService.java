@@ -2,12 +2,16 @@ package com.example.demo.user.service;
 
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.user.mapper.UserMapper;
 import com.example.demo.user.vo.User;
 
 @Service
+@Transactional
 public class UserService {
 
 	private UserMapper userMapper;
@@ -34,5 +38,10 @@ public class UserService {
 	
 	public int deleteUser(int id){
 		return userMapper.delete(id);
+	}
+	
+	public int updateForError(User user){
+		userMapper.update(user);
+		throw new RuntimeErrorException(null);
 	}
 }

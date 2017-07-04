@@ -2,6 +2,10 @@ package com.example.demo.user.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,22 +36,28 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/{id}", method=RequestMethod.GET)
-	public User getUser(@PathVariable int id){
+	public User getUser(@PathVariable int id, HttpServletRequest request){
+		
+		/*User user = userService.getUserForId(id);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("user", user);
+		*/
 		return userService.getUserForId(id);
 	}
 	
 	@RequestMapping(path="", method=RequestMethod.POST)
-	public int createUser(@RequestBody User user){
+	public int createUser(@Valid @RequestBody User user){
 		return userService.addUser(user);
 	}
 	
 	@RequestMapping(path="", method=RequestMethod.PUT)
-	public int modifyUser(@RequestBody User user){
+	public int modifyUser(@Valid @RequestBody User user){
 		return userService.updateUser(user);
 	}
 	
 	@RequestMapping(path="/{id}", method=RequestMethod.DELETE)
-	public int deleteUser(@PathVariable int id){
+	public int deleteUser(@Valid @PathVariable int id){
 		return userService.deleteUser(id);
 	}
 	

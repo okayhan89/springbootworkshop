@@ -18,7 +18,17 @@ spring:
     console:
       enabled: true
       path : /h2-console
+  session:
+    store-type : jdbc
 
+security:
+  basic:
+    enabled: false
+  user:
+    name: admin
+    password: admin
+
+ 
 test:
   env: Localhost
 
