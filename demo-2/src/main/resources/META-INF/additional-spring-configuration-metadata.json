@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "test.string",
+    "type": "java.lang.String",
+    "description": "A description for 'test.string'"
+  },
+  {
+    "name": "test.env",
+    "type": "java.lang.String",
+    "description": "A description for 'test.env'"
+  }
+]}

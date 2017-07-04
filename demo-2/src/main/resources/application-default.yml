@@ -1,0 +1,27 @@
+debug: true
+
+spring:
+  application:
+    name: spring-boot-yeobworkshop-localhost
+  datasource:
+    platform: h2
+    url : jdbc:h2:mem:testdb
+    username: sa
+    password :
+    tomcat :
+      validation-query: SELECT 1
+      initial-size : 2
+      max-activ : 10
+      
+    
+  h2:
+    console:
+      enabled: true
+      path : /h2-console
+
+test:
+  env: Localhost
+
+logging:
+  file: ./log/${spring.application.name}.log
+  

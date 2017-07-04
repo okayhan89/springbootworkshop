@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-boot-yeobworkshop-prod
+
+test:
+  env: Production
+  
+logging:
+  level:
+    root: error

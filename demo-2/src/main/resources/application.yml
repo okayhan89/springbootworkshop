@@ -1,0 +1,8 @@
+management:
+  security:
+    enabled: false
+
+
+test:
+  string: YAML ==> ${spring.application.name}
+  

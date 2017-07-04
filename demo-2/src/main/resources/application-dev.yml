@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-boot-yeobworkshop-dev
+
+logging:
+  path: ./log-dev
+  level:
+    root: warn
+  
